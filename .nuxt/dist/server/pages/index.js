@@ -173,13 +173,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./pages/index.vue?vue&type=template&id=a5b1795a&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./pages/index.vue?vue&type=template&id=16ecb9b7&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"w-full h-full bg-gray-200 flex justify-center shadow-md"},[_vm._ssrNode("<div class=\"flex justify-center flex-col fixed\">","</div>",[_vm._ssrNode("<div class=\"shadow-lg bg-white w-490px\">","</div>",[_vm._ssrNode("<header class=\"items-center\"><h1 class=\"text-red-500 text-stroke-1 text-xl flex justify-center\">\n          Now playing :\n        </h1> <h2 class=\"flex justify-center text-2xl mb-3\">"+_vm._ssrEscape("\n          "+_vm._s(_vm.data.name || 'Welcome to music')+"\n        ")+"</h2></header> <audio id=\"myAudio\""+(_vm._ssrAttr("src",_vm.data.path))+"></audio> <div id=\"cdThumb\" class=\"flex justify-center w-full\"><img id=\"cd-thumb-image\""+(_vm._ssrAttr("src",_vm.data.image ||
             'https://khoa2698.github.io/Music_player/assets/img/Chieu_Vang.jpg'))+" alt class=\"w-200px h-200px rounded-full bg-red-500 animate-spin-slow cursor-pointer\"></div> "),_vm._ssrNode("<div class=\"flex justify-center space-x-8 mt-6\">","</div>",[_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.isRepeat)?_c('Replay',{staticClass:"w-10 h-10 p-2 rounded-full"}):_c('Replay',{staticClass:"w-10 h-10 p-2 rounded-full text-red-500"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[_c('Back',{staticClass:"w-10 h-10 p-2 rounded-full"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.is_playing)?_c('Play',{staticClass:"w-15 h-15 border p-3 rounded-full bg-red-500 text-white"}):_c('Pause',{staticClass:"w-15 h-15 border p-3 rounded-full bg-red-500 text-white"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[_c('Next',{staticClass:"w-10 h-10 p-2 rounded-full"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.isRandom)?_c('Random',{staticClass:"w-10 h-10 p-2 rounded-full"}):_c('Random',{staticClass:"w-10 h-10 p-2 rounded-full text-red-500"})],1)],2),_vm._ssrNode(" <div class=\"px-5 my-2\"><input id=\"progress\" type=\"range\" value=\"0\" step=\"2\" min=\"0\" max=\"100\" class=\"slider\"></div>")],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"bg-gray-200 h-screen shadow-md mt-400px\">","</div>",_vm._l((_vm.songs),function(item){return _vm._ssrNode("<div>","</div>",[_c('Music',{attrs:{"data":item}})],1)}),0)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=a5b1795a&
+// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=16ecb9b7&
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./icons/back.vue?vue&type=template&id=2822e9aa&
 var backvue_type_template_id_2822e9aa_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"width":"1em","height":"1em","viewBox":"0 0 20 20"}},[_vm._ssrNode("<path fill=\"currentColor\" d=\"m4 10l9 9l1.4-1.5L7 10l7.4-7.5L13 1z\"></path>")])}
@@ -568,7 +568,7 @@ var external_console_ = __webpack_require__(66);
         id: 2,
         name: 'Phía sau một cô gái ',
         singer: 'Soobin Hoàng Sơn',
-        path: '/assets/music/Phia-Sau-Mot-Co-Gai-SOOBIN.mp3',
+        path: 'https://mp3-s1-zmp3.zmdcdn.me/a32e305cab1842461b09/4870257449214198184?authen=exp=1652954866~acl=/a32e305cab1842461b09/*~hmac=66456a898db29674e309373d2e9546db&fs=MTY1MjmUsIC4MjA2NjE2M3x3ZWJWNnwwfDE3MS4yMzYdUngNTYdUngMTI2',
         image: 'https://vnn-imgs-f.vgcloud.vn/2019/02/22/09/img-3722.jpg'
       }, {
         id: 3,

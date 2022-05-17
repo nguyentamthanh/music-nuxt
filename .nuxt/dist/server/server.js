@@ -3789,15 +3789,15 @@ async function createApp(ssrContext, config = {}) {
       }, {
         "hid": "shortcut-icon",
         "rel": "shortcut icon",
-        "href": "\u002Fnuxt-music\u002F_nuxt\u002Ficons\u002Ficon_64x64.e3e9fb.png"
+        "href": "\u002Fmusic-nuxt\u002F_nuxt\u002Ficons\u002Ficon_64x64.e3e9fb.png"
       }, {
         "hid": "apple-touch-icon",
         "rel": "apple-touch-icon",
-        "href": "\u002Fnuxt-music\u002F_nuxt\u002Ficons\u002Ficon_512x512.e3e9fb.png",
+        "href": "\u002Fmusic-nuxt\u002F_nuxt\u002Ficons\u002Ficon_512x512.e3e9fb.png",
         "sizes": "512x512"
       }, {
         "rel": "manifest",
-        "href": "\u002Fnuxt-music\u002F_nuxt\u002Fmanifest.525b914c.json",
+        "href": "\u002Fmusic-nuxt\u002F_nuxt\u002Fmanifest.d810aee3.json",
         "hid": "manifest"
       }],
       "style": [],
