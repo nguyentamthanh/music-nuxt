@@ -1,0 +1,15 @@
+{
+  "entry": "server.js",
+  "files": {
+    "components/music.js": "components/music.js",
+    "pages/home.js": "pages/home.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "components/music.js": "components/music.js.map",
+    "pages/home.js": "pages/home.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}
