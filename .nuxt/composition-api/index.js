@@ -501,7 +501,7 @@ const useStatic = (factory, param = ref(""), keyBase) => {
   if (result.value)
     staticCache[key.value] = result.value;
   if (process.client) {
-    const publicPath = ((_b = (_a = window[globalContext].$config) == null ? void 0 : _a.app) == null ? void 0 : _b.cdnURL) || "/nuxt-music/";
+    const publicPath = ((_b = (_a = window[globalContext].$config) == null ? void 0 : _a.app) == null ? void 0 : _b.cdnURL) || "/music-nuxt/";
     const onFailure = () => factory(param.value, key.value).then((r) => {
       staticCache[key.value] = r;
       result.value = r;

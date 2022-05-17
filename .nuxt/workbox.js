@@ -5,8 +5,8 @@ async function register() {
 
   const { Workbox } = await import('workbox-cdn/workbox/workbox-window.prod.es5.mjs')
 
-  const workbox = new Workbox('/nuxt-music/sw.js', {
-    scope: '/nuxt-music/'
+  const workbox = new Workbox('/music-nuxt/sw.js', {
+    scope: '/music-nuxt/'
   })
 
   await workbox.register()

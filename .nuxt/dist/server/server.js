@@ -104,7 +104,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/nuxt-music/_nuxt/";
+/******/ 	__webpack_require__.p = "/music-nuxt/_nuxt/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -608,7 +608,7 @@ module.exports = require("vue-meta");
 /* 17 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"title\":\"nuxt-music\",\"meta\":[{\"hid\":\"charset\",\"charset\":\"utf-8\"},{\"hid\":\"viewport\",\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"},{\"hid\":\"mobile-web-app-capable\",\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"},{\"hid\":\"apple-mobile-web-app-title\",\"name\":\"apple-mobile-web-app-title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:type\",\"name\":\"og:type\",\"property\":\"og:type\",\"content\":\"website\"},{\"hid\":\"og:title\",\"name\":\"og:title\",\"property\":\"og:title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:site_name\",\"name\":\"og:site_name\",\"property\":\"og:site_name\",\"content\":\"nuxt-music\"}],\"link\":[{\"hid\":\"shortcut-icon\",\"rel\":\"shortcut icon\",\"href\":\"/nuxt-music/_nuxt/icons/icon_64x64.e3e9fb.png\"},{\"hid\":\"apple-touch-icon\",\"rel\":\"apple-touch-icon\",\"href\":\"/nuxt-music/_nuxt/icons/icon_512x512.e3e9fb.png\",\"sizes\":\"512x512\"},{\"rel\":\"manifest\",\"href\":\"/nuxt-music/_nuxt/manifest.525b914c.json\",\"hid\":\"manifest\"}],\"htmlAttrs\":{\"lang\":\"en\"}}");
+module.exports = JSON.parse("{\"title\":\"nuxt-music\",\"meta\":[{\"hid\":\"charset\",\"charset\":\"utf-8\"},{\"hid\":\"viewport\",\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"},{\"hid\":\"mobile-web-app-capable\",\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"},{\"hid\":\"apple-mobile-web-app-title\",\"name\":\"apple-mobile-web-app-title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:type\",\"name\":\"og:type\",\"property\":\"og:type\",\"content\":\"website\"},{\"hid\":\"og:title\",\"name\":\"og:title\",\"property\":\"og:title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:site_name\",\"name\":\"og:site_name\",\"property\":\"og:site_name\",\"content\":\"nuxt-music\"}],\"link\":[{\"hid\":\"shortcut-icon\",\"rel\":\"shortcut icon\",\"href\":\"/music-nuxt/_nuxt/icons/icon_64x64.e3e9fb.png\"},{\"hid\":\"apple-touch-icon\",\"rel\":\"apple-touch-icon\",\"href\":\"/music-nuxt/_nuxt/icons/icon_512x512.e3e9fb.png\",\"sizes\":\"512x512\"},{\"rel\":\"manifest\",\"href\":\"/music-nuxt/_nuxt/manifest.d810aee3.json\",\"hid\":\"manifest\"}],\"htmlAttrs\":{\"lang\":\"en\"}}");
 
 /***/ }),
 /* 18 */
@@ -1787,7 +1787,7 @@ const emptyFn = () => {};
 external_vue_default.a.use(external_vue_router_default.a);
 const routerOptions = {
   mode: 'history',
-  base: '/nuxt-music/',
+  base: '/music-nuxt/',
   linkActiveClass: 'nuxt-link-active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior: router_scrollBehavior,
@@ -2617,23 +2617,23 @@ var meta = __webpack_require__(17);
 // CONCATENATED MODULE: ./.nuxt/pwa/icon.plugin.js
 /* harmony default export */ var icon_plugin = (async function (ctx, inject) {
   const icons = {
-    "64x64": "/nuxt-music/_nuxt/icons/icon_64x64.e3e9fb.png",
-    "120x120": "/nuxt-music/_nuxt/icons/icon_120x120.e3e9fb.png",
-    "144x144": "/nuxt-music/_nuxt/icons/icon_144x144.e3e9fb.png",
-    "152x152": "/nuxt-music/_nuxt/icons/icon_152x152.e3e9fb.png",
-    "192x192": "/nuxt-music/_nuxt/icons/icon_192x192.e3e9fb.png",
-    "384x384": "/nuxt-music/_nuxt/icons/icon_384x384.e3e9fb.png",
-    "512x512": "/nuxt-music/_nuxt/icons/icon_512x512.e3e9fb.png",
-    "ipad_1536x2048": "/nuxt-music/_nuxt/icons/splash_ipad_1536x2048.e3e9fb.png",
-    "ipadpro9_1536x2048": "/nuxt-music/_nuxt/icons/splash_ipadpro9_1536x2048.e3e9fb.png",
-    "ipadpro10_1668x2224": "/nuxt-music/_nuxt/icons/splash_ipadpro10_1668x2224.e3e9fb.png",
-    "ipadpro12_2048x2732": "/nuxt-music/_nuxt/icons/splash_ipadpro12_2048x2732.e3e9fb.png",
-    "iphonese_640x1136": "/nuxt-music/_nuxt/icons/splash_iphonese_640x1136.e3e9fb.png",
-    "iphone6_50x1334": "/nuxt-music/_nuxt/icons/splash_iphone6_50x1334.e3e9fb.png",
-    "iphoneplus_1080x1920": "/nuxt-music/_nuxt/icons/splash_iphoneplus_1080x1920.e3e9fb.png",
-    "iphonex_1125x2436": "/nuxt-music/_nuxt/icons/splash_iphonex_1125x2436.e3e9fb.png",
-    "iphonexr_828x1792": "/nuxt-music/_nuxt/icons/splash_iphonexr_828x1792.e3e9fb.png",
-    "iphonexsmax_1242x2688": "/nuxt-music/_nuxt/icons/splash_iphonexsmax_1242x2688.e3e9fb.png"
+    "64x64": "/music-nuxt/_nuxt/icons/icon_64x64.e3e9fb.png",
+    "120x120": "/music-nuxt/_nuxt/icons/icon_120x120.e3e9fb.png",
+    "144x144": "/music-nuxt/_nuxt/icons/icon_144x144.e3e9fb.png",
+    "152x152": "/music-nuxt/_nuxt/icons/icon_152x152.e3e9fb.png",
+    "192x192": "/music-nuxt/_nuxt/icons/icon_192x192.e3e9fb.png",
+    "384x384": "/music-nuxt/_nuxt/icons/icon_384x384.e3e9fb.png",
+    "512x512": "/music-nuxt/_nuxt/icons/icon_512x512.e3e9fb.png",
+    "ipad_1536x2048": "/music-nuxt/_nuxt/icons/splash_ipad_1536x2048.e3e9fb.png",
+    "ipadpro9_1536x2048": "/music-nuxt/_nuxt/icons/splash_ipadpro9_1536x2048.e3e9fb.png",
+    "ipadpro10_1668x2224": "/music-nuxt/_nuxt/icons/splash_ipadpro10_1668x2224.e3e9fb.png",
+    "ipadpro12_2048x2732": "/music-nuxt/_nuxt/icons/splash_ipadpro12_2048x2732.e3e9fb.png",
+    "iphonese_640x1136": "/music-nuxt/_nuxt/icons/splash_iphonese_640x1136.e3e9fb.png",
+    "iphone6_50x1334": "/music-nuxt/_nuxt/icons/splash_iphone6_50x1334.e3e9fb.png",
+    "iphoneplus_1080x1920": "/music-nuxt/_nuxt/icons/splash_iphoneplus_1080x1920.e3e9fb.png",
+    "iphonex_1125x2436": "/music-nuxt/_nuxt/icons/splash_iphonex_1125x2436.e3e9fb.png",
+    "iphonexr_828x1792": "/music-nuxt/_nuxt/icons/splash_iphonexr_828x1792.e3e9fb.png",
+    "iphonexsmax_1242x2688": "/music-nuxt/_nuxt/icons/splash_iphonexsmax_1242x2688.e3e9fb.png"
   };
 
   const getIcon = size => icons[size + 'x' + size] || '';
@@ -4052,7 +4052,7 @@ const createNext = ssrContext => opts => {
 
   let fullPath = Object(external_ufo_["withQuery"])(opts.path, opts.query);
   const $config = ssrContext.runtimeConfig || {};
-  const routerBase = $config._app && $config._app.basePath || '/nuxt-music/';
+  const routerBase = $config._app && $config._app.basePath || '/music-nuxt/';
 
   if (!fullPath.startsWith('http') && routerBase !== '/' && !fullPath.startsWith(routerBase)) {
     fullPath = Object(external_ufo_["joinURL"])(routerBase, fullPath);

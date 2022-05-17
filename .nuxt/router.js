@@ -13,7 +13,7 @@ Vue.use(Router)
 
 export const routerOptions = {
   mode: 'history',
-  base: '/nuxt-music/',
+  base: '/music-nuxt/',
   linkActiveClass: 'nuxt-link-active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,

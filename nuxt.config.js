@@ -57,7 +57,7 @@ export default {
   build: {},
   mode: 'static',
   router: {
-    base: '/nuxt-music/',
+    base: '/music-nuxt/',
   },
   // other config goes here
 }
