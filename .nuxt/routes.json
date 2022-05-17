@@ -3,12 +3,14 @@
     "name": "home",
     "path": "/home",
     "component": "/home/thanh/nuxt-music/pages/home.vue",
-    "chunkName": "pages/home"
+    "chunkName": "pages/home",
+    "_name": "_38d047b7"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/thanh/nuxt-music/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_3575f2aa"
   }
 ]
