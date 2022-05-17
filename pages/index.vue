@@ -123,7 +123,7 @@ export default {
           id: 1,
           name: 'Có điều gì sao không nói cùng anh ',
           singer: 'Trung Quân Idol',
-          path: 'https://assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
+          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
           image:
             'https://giaithuongtinhnguyen.vn/tieu-su-trung-quan-idol/imager_1_5795_700.jpg',
         },
@@ -131,14 +131,14 @@ export default {
           id: 2,
           name: 'Phía sau một cô gái ',
           singer: 'Soobin Hoàng Sơn',
-          path: 'https://mp3-s1-zmp3.zmdcdn.me/a32e305cab1842461b09/4870257449214198184?authen=exp=1652954866~acl=/a32e305cab1842461b09/*~hmac=66456a898db29674e309373d2e9546db&fs=MTY1MjmUsIC4MjA2NjE2M3x3ZWJWNnwwfDE3MS4yMzYdUngNTYdUngMTI2',
+          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Phia-Sau-Mot-Co-Gai-SOOBIN.mp3',
           image: 'https://vnn-imgs-f.vgcloud.vn/2019/02/22/09/img-3722.jpg',
         },
         {
           id: 3,
           name: 'Trót yêu',
           singer: 'Trung Quân Idol',
-          path: '/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
+          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
           image:
             'https://image.thanhnien.vn/w2048/Uploaded/2022/jhvabun/2021_08_20/mmg0914_2_eykf.png',
         },
@@ -147,7 +147,7 @@ export default {
           id: 4,
           name: 'Xin đừng lặng im ',
           singer: 'Soobin Hoàng Sơn',
-          path: '/assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
+          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
           image:
             'https://livestream.vn/wp-content/uploads/2019/02/1532919878451_600.jpg',
         },
