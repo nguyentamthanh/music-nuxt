@@ -1,0 +1,297 @@
+<template>
+  <div class="w-full h-full bg-gray-200 flex justify-center shadow-md">
+    <!-- dashbroad -->
+    <div class="flex justify-center flex-col fixed">
+      <div class="shadow-lg bg-white w-490px">
+        <header class="items-center">
+          <h1 class="text-red-500 text-stroke-1 text-xl flex justify-center">
+            Now playing :
+          </h1>
+          <h2 class="flex justify-center text-2xl mb-3">
+            {{ data.name || 'Welcome to music' }}
+          </h2>
+        </header>
+        <!-- cd -->
+        <audio id="myAudio" :src="data.path"></audio>
+        <div class="flex justify-center w-full" id="cdThumb">
+          <img
+            id="cd-thumb-image"
+            :src="
+              data.image ||
+              'https://khoa2698.github.io/Music_player/assets/img/Chieu_Vang.jpg'
+            "
+            alt=""
+            class="w-200px h-200px rounded-full bg-red-500 animate-spin-slow cursor-pointer"
+          />
+        </div>
+
+        <!-- control -->
+        <div class="flex justify-center space-x-8 mt-6">
+          <div
+            class="cursor-pointer flex flex-col justify-center"
+            @click="replayAudio()"
+          >
+            <Replay v-if="!isRepeat" class="w-10 h-10 p-2 rounded-full" />
+            <Replay v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
+          </div>
+          <div
+            @click="backAudio()"
+            class="cursor-pointer flex flex-col justify-center"
+          >
+            <Back class="w-10 h-10 p-2 rounded-full" />
+          </div>
+          <div
+            class="cursor-pointer flex flex-col justify-center"
+            @click="togglePlay"
+          >
+            <Play
+              v-if="!is_playing"
+              class="w-15 h-15 border p-3 rounded-full bg-red-500 text-white"
+            />
+
+            <Pause
+              v-else
+              class="w-15 h-15 border p-3 rounded-full bg-red-500 text-white"
+            />
+          </div>
+          <div
+            class="cursor-pointer flex flex-col justify-center"
+            @click="nextAudio()"
+          >
+            <Next class="w-10 h-10 p-2 rounded-full" />
+          </div>
+          <div
+            class="cursor-pointer flex flex-col justify-center"
+            @click="randomAudio()"
+          >
+            <Random v-if="!isRandom" class="w-10 h-10 p-2 rounded-full" />
+            <Random v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
+          </div>
+        </div>
+        <div class="px-5 my-2">
+          <input
+            id="progress"
+            class="slider"
+            type="range"
+            value="0"
+            step="2"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <!-- music -->
+      </div>
+    </div>
+    <div class="bg-gray-200 h-screen shadow-md mt-400px">
+      <div v-for="item in songs" :key="item.id" @click="selectMusic(item)">
+        <Music v-bind:data="item" />
+      </div>
+    </div>
+    <!-- playlist -->
+  </div>
+</template>
+
+<script>
+import Back from '~/icons/back.vue'
+import Replay from '~/icons/replay.vue'
+import Play from '~/icons/play.vue'
+import Pause from '~/icons/pause.vue'
+import Next from '~/icons/next.vue'
+import Random from '../icons/random.vue'
+import Music from '../components/music.vue'
+import { type } from 'os'
+import { log } from 'console'
+
+export default {
+  name: 'IndexPage',
+  data() {
+    return {
+      data: '',
+      test: '',
+      player: '',
+      play: true,
+      currentIndex: 0,
+      isPlaying: false,
+      isRandom: false,
+      isRepeat: false,
+      isTimeUpdate: false,
+      is_playing: false,
+      random: false,
+      songs: [
+        {
+          id: 1,
+          name: 'Có điều gì sao không nói cùng anh ',
+          singer: 'Trung Quân Idol',
+          path: '/assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
+          image:
+            'https://giaithuongtinhnguyen.vn/tieu-su-trung-quan-idol/imager_1_5795_700.jpg',
+        },
+        {
+          id: 2,
+          name: 'Phía sau một cô gái ',
+          singer: 'Soobin Hoàng Sơn',
+          path: '/assets/music/Phia-Sau-Mot-Co-Gai-SOOBIN.mp3',
+          image: 'https://vnn-imgs-f.vgcloud.vn/2019/02/22/09/img-3722.jpg',
+        },
+        {
+          id: 3,
+          name: 'Trót yêu',
+          singer: 'Trung Quân Idol',
+          path: '/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
+          image:
+            'https://image.thanhnien.vn/w2048/Uploaded/2022/jhvabun/2021_08_20/mmg0914_2_eykf.png',
+        },
+
+        {
+          id: 4,
+          name: 'Xin đừng lặng im ',
+          singer: 'Soobin Hoàng Sơn',
+          path: '/assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
+          image:
+            'https://livestream.vn/wp-content/uploads/2019/02/1532919878451_600.jpg',
+        },
+      ],
+    }
+  },
+
+  mounted() {
+    const x = document.querySelector.bind(document)
+    const cdthumbing = x('#cd-thumb-image')
+    const cdthumb = x('#cdThumb')
+    const cdWidth = cdthumbing.offsetWidth
+    document.onscroll = function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const newCdWidth = cdWidth - scrollTop
+      cdthumbing.style.width = newCdWidth > 0 ? newCdWidth + 'px' : 0
+      cdthumbing.style.height = newCdWidth > 0 ? newCdWidth + 'px' : 0
+      cdthumbing.style.opacity = newCdWidth / cdWidth
+    }
+    this.player = document.getElementById('myAudio')
+    let self = this
+    this.player.onplay = function () {
+      self.is_playing = true
+    }
+    this.player.onpause = function () {
+      self.is_playing = false
+    }
+    this.player.ontimeupdate = function () {
+      if (self.player.duration) {
+        const progressPercent = Math.floor(
+          (self.player.currentTime / self.player.duration) * 100
+        )
+        progress.value = progressPercent
+      }
+    }
+
+    // Xử lý khi tua song
+    // Handling when seek
+    progress.onchange = function (e) {
+      const seekTime = (self.player.duration / 100) * e.target.value
+      self.player.currentTime = seekTime
+    }
+  },
+  methods: {
+    selectMusic(song) {
+      if (this.is_playing) {
+        this.player.pause()
+      }
+      this.data = song
+      let self = this
+      setTimeout(function () {
+        self.player.play()
+      }, 150)
+    },
+    togglePlay() {
+      if (this.player) {
+        console.log(this.player.paused)
+        if (this.is_playing) {
+          console.log('pause')
+          this.player.pause()
+        } else {
+          console.log('play')
+          this.player.play()
+        }
+      } else {
+        console.log('player null')
+      }
+    },
+    loadCurrentSong() {
+      heading.textContent = this.currentSong.name
+      cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
+      data.src = this.currentSong.path
+    },
+    processAudio() {},
+    nextAudio() {
+      console.log(this.data)
+      this.currentIndex++
+      console.log(this.currentIndex)
+      if (this.currentIndex >= this.songs.length) {
+        this.currentIndex = 0
+      }
+      this.loadCurrentSong()
+    },
+    backAudio() {
+      console.log('davfdaf')
+    },
+    replayAudio() {
+      this.isRepeat = !this.isRepeat
+      if (this.isRepeat) {
+        for (var i = 0; i < 10; i++) {
+          console.log(this.data.path)
+          this.data.path = this.test
+          this.player.play
+        }
+      } else {
+        console.log('hihihi')
+      }
+      console.log(this.data)
+    },
+    randomAudio() {
+      let newIndex
+      do {
+        newIndex = Math.floor(Math.random() * this.songs.length)
+      } while (newIndex === this.currentIndex)
+
+      this.currentIndex = newIndex
+      this.isRandom = !this.isRandom
+      console.log('dssdsds')
+    },
+  },
+
+  components: { Back, Replay, Play, Pause, Next, Random, Music },
+}
+</script>
+<style>
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 7px;
+  background: red;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 7px;
+  background: red;
+  cursor: pointer;
+}
+</style>
