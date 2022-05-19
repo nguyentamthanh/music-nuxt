@@ -55,7 +55,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  mode: 'static',
+  ssr: false,
   router: {
     base: '/music-nuxt/',
   },

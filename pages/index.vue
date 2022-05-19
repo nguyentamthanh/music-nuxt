@@ -1,14 +1,18 @@
 <template>
-  <div class="w-full h-full bg-gray-200 flex justify-center shadow-md">
+  <div
+    class="w-full h-full flex justify-center !bg-gradient-to-r !from-red-500 !via-yellow-500 !to-blue-500"
+  >
     <!-- dashbroad -->
-    <div class="flex justify-center flex-col fixed">
-      <div class="shadow-lg bg-white w-490px">
+    <div
+      class="flex justify-center flex-col fixed backdrop-filter backdrop-blur-md"
+    >
+      <div class="shadow-lg w-480px pb-2">
         <header class="items-center">
           <h1 class="text-red-500 text-stroke-1 text-xl flex justify-center">
             Now playing :
           </h1>
           <h2 class="flex justify-center text-2xl mb-3">
-            {{ data.name || 'Welcome to music' }}
+            {{ cdname }}
           </h2>
         </header>
         <!-- cd -->
@@ -17,10 +21,7 @@
           <!-- animate-spin-slow -->
           <img
             id="cd-thumb-image"
-            :src="
-              data.image ||
-              'https://thumbs.dreamstime.com/z/error-page-not-found-vector-vinyl-music-broken-graphic-error-page-not-found-vector-vinyl-music-broken-graphic-background-156624909.jpg'
-            "
+            :src="cd"
             alt=""
             class="w-200px h-200px rounded-full bg-red-500 cursor-pointer animate-spin-slow"
           />
@@ -84,8 +85,12 @@
         <!-- music -->
       </div>
     </div>
-    <div class="bg-gray-200 h-screen shadow-md mt-400px">
-      <div v-for="item in songs" :key="item.id" @click="selectMusic(item)">
+    <div class="h-screen shadow-md mt-400px">
+      <div
+        v-for="(item, index) in songs"
+        :key="item.id"
+        @click="selectMusic(item)"
+      >
         <Music v-bind:data="item" />
       </div>
     </div>
@@ -108,6 +113,8 @@ export default {
   name: 'IndexPage',
   data() {
     return {
+      cd: 'https://thumbs.dreamstime.com/z/error-page-not-found-vector-vinyl-music-broken-graphic-error-page-not-found-vector-vinyl-music-broken-graphic-background-156624909.jpg',
+      cdname: 'Welcome to music',
       data: '',
       player: '',
       is_playing: false,
@@ -167,7 +174,7 @@ export default {
       cdthumbing.style.height = newCdWidth > 0 ? newCdWidth + 'px' : 0
       cdthumbing.style.opacity = newCdWidth / cdWidth
     }
-    this.player = document.getElementById('myAudio')
+    this.player = this.$el.querySelector('#myAudio')
     let self = this
     this.player.onplay = function () {
       self.is_playing = true
@@ -189,11 +196,14 @@ export default {
     }
   },
   methods: {
-    selectMusic(song) {
+    selectMusic(item) {
       if (this.is_playing) {
         this.player.pause()
       }
-      this.data = song
+      this.cd = item.image
+      this.cdname = item.name
+
+      this.data = item
       let self = this
       setTimeout(function () {
         self.player.play()
@@ -216,13 +226,27 @@ export default {
 
     nextAudio() {
       this.currentIndex++
+
       if (this.currentIndex >= this.songs.length) {
-        this.data.i
+        this.currentIndex = -1
+      } else {
         this.player.src = this.songs[this.currentIndex].path
+        this.cd = this.songs[this.currentIndex].image
+        this.cdname = this.songs[this.currentIndex].name
         this.player.play()
       }
     },
-    backAudio() {},
+    backAudio() {
+      this.currentIndex--
+      if (this.currentIndex < 0) {
+        this.currentIndex = 4
+      } else {
+        this.player.src = this.songs[this.currentIndex].path
+        this.cd = this.songs[this.currentIndex].image
+        this.cdname = this.songs[this.currentIndex].name
+        this.player.play()
+      }
+    },
     replayAudio() {
       this.isRepeat = !this.isRepeat
       if (this.isRepeat) {
@@ -234,20 +258,30 @@ export default {
     },
     randomAudio() {
       this.isRandom = !this.isRandom
-      var y = ''
-
       if (this.isRandom) {
-        this.songs.filter((item) => {
-          y = item.path.split(' ')
-          console.log()
-        })
-
-        // audio_files[Math.floor(Math.random() * audio_files.length)]
-        // this.player.src = this.data.path
-        // this.player.play()
+        let random
+        this.player.play()
+        this.player.src = random
+        random = this.songs[[Math.floor(Math.random() * this.songs.length)]]
+        console.log(random.path)
+        this.nextAudio()
+        this.replayAudio()
       } else {
         this.player.pause()
       }
+
+      // var audio = new Audio(random_file())
+
+      // this.player.play()
+
+      // this.player.addEventListener(
+      //   'ended',
+      //   function () {
+      //     audio.play(random_file())
+      // }
+      // audio_files[Math.floor(Math.random() * audio_files.length)]
+      // this.player.src = this.data.path
+      // this.player.play()
     },
   },
 

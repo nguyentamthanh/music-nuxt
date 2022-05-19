@@ -1,17 +1,4 @@
 /*!
-  * vue-router v3.5.3
-  * (c) 2021 Evan You
-  * @license MIT
-  */
-
-/*!
- * Vue.js v2.6.14
- * (c) 2014-2021 Evan You
- * Released under the MIT License.
- */
-
-
-/*!
   * @vueuse/sound v1.1.6
   * (c) 2021 Yaël GUILLOUX
   * @license MIT
@@ -42,10 +29,17 @@
 
 
 /*!
-  * @vueuse/sound v1.1.6
-  * (c) 2021 Yaël GUILLOUX
+  * vue-router v3.5.4
+  * (c) 2022 Evan You
   * @license MIT
   */
+
+/*!
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
+ * Released under the MIT License.
+ */
+
 
 /*!
  *  Spatial Plugin - Adds support for stereo and 3D audio where Web Audio is supported.
