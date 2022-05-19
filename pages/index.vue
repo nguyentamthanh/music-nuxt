@@ -11,7 +11,7 @@
           <h1 class="text-red-500 text-stroke-1 text-xl flex justify-center">
             Now playing :
           </h1>
-          <h2 class="flex justify-center text-2xl mb-3">
+          <h2 class="flex justify-center text-2xl mb-3 text-white">
             {{ cdname }}
           </h2>
         </header>
