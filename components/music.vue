@@ -2,7 +2,7 @@
   <div class="w-480px p-3">
     <!-- transform transition-all duration-500 -->
     <div
-      class="w-full flex h-80px border font-sans rounded-md bg-white hover:(text-white bg-purple-600 cursor-pointer)"
+      class="w-full flex h-80px border font-sans rounded-md bg-white hover:(text-white bg-purple-600 cursor-pointer transform transition-all duration-2000)"
     >
       <div class="w-1/3 flex justify-start items-center">
         <div class="flex justify-center w-full">

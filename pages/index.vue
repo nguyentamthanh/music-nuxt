@@ -33,14 +33,17 @@
             class="cursor-pointer flex flex-col justify-center"
             @click="replayAudio()"
           >
-            <Replay v-if="!isRepeat" class="w-10 h-10 p-2 rounded-full" />
+            <Replay
+              v-if="!isRepeat"
+              class="text-white w-10 h-10 p-2 rounded-full"
+            />
             <Replay v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
           </div>
           <div
             @click="backAudio()"
             class="cursor-pointer flex flex-col justify-center"
           >
-            <Back class="w-10 h-10 p-2 rounded-full" />
+            <Back class="w-10 h-10 p-2 rounded-full text-white" />
           </div>
           <div
             class="cursor-pointer flex flex-col justify-center"
@@ -60,13 +63,16 @@
             class="cursor-pointer flex flex-col justify-center"
             @click="nextAudio()"
           >
-            <Next class="w-10 h-10 p-2 rounded-full" />
+            <Next class="w-10 h-10 p-2 rounded-full text-white" />
           </div>
           <div
             class="cursor-pointer flex flex-col justify-center"
             @click="randomAudio()"
           >
-            <Random v-if="!isRandom" class="w-10 h-10 p-2 rounded-full" />
+            <Random
+              v-if="!isRandom"
+              class="w-10 h-10 p-2 rounded-full text-white"
+            />
             <Random v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
           </div>
         </div>
