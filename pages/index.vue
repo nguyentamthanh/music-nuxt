@@ -14,14 +14,15 @@
         <!-- cd -->
         <audio id="myAudio" :src="data.path"></audio>
         <div class="flex justify-center w-full" id="cdThumb">
+          <!-- animate-spin-slow -->
           <img
             id="cd-thumb-image"
             :src="
               data.image ||
-              'https://khoa2698.github.io/Music_player/assets/img/Chieu_Vang.jpg'
+              'https://thumbs.dreamstime.com/z/error-page-not-found-vector-vinyl-music-broken-graphic-error-page-not-found-vector-vinyl-music-broken-graphic-background-156624909.jpg'
             "
             alt=""
-            class="w-200px h-200px rounded-full bg-red-500 animate-spin-slow cursor-pointer"
+            class="w-200px h-200px rounded-full bg-red-500 cursor-pointer animate-spin-slow"
           />
         </div>
 
@@ -42,7 +43,7 @@
           </div>
           <div
             class="cursor-pointer flex flex-col justify-center"
-            @click="togglePlay"
+            @click="togglePlay()"
           >
             <Play
               v-if="!is_playing"
@@ -78,6 +79,15 @@
             min="0"
             max="100"
           />
+          <!-- <input
+            @input="changeVol(event)"
+            class="slider"
+            type="range"
+            value="0"
+            step="2"
+            min="0"
+            max="100"
+          /> -->
         </div>
 
         <!-- music -->
@@ -102,22 +112,22 @@ import Random from '../icons/random.vue'
 import Music from '../components/music.vue'
 import { type } from 'os'
 import { log } from 'console'
+import { faBalanceScaleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   name: 'IndexPage',
   data() {
     return {
       data: '',
-      test: '',
       player: '',
-      play: true,
+      is_playing: false,
+      isActive: false,
       currentIndex: 0,
       isPlaying: false,
       isRandom: false,
       isRepeat: false,
       isTimeUpdate: false,
       is_playing: false,
-      random: false,
       songs: [
         {
           id: 1,
@@ -183,9 +193,6 @@ export default {
         progress.value = progressPercent
       }
     }
-
-    // Xử lý khi tua song
-    // Handling when seek
     progress.onchange = function (e) {
       const seekTime = (self.player.duration / 100) * e.target.value
       self.player.currentTime = seekTime
@@ -201,6 +208,7 @@ export default {
       setTimeout(function () {
         self.player.play()
       }, 150)
+      this.loadCurrentSong()
     },
     togglePlay() {
       if (this.player) {
@@ -216,46 +224,24 @@ export default {
         console.log('player null')
       }
     },
+
     loadCurrentSong() {
-      heading.textContent = this.currentSong.name
-      cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
-      data.src = this.currentSong.path
-    },
-    processAudio() {},
-    nextAudio() {
       console.log(this.data)
-      this.currentIndex++
-      console.log(this.currentIndex)
-      if (this.currentIndex >= this.songs.length) {
-        this.currentIndex = 0
-      }
-      this.loadCurrentSong()
     },
-    backAudio() {
-      console.log('davfdaf')
-    },
+
+    nextAudio() {},
+    backAudio() {},
     replayAudio() {
       this.isRepeat = !this.isRepeat
       if (this.isRepeat) {
-        for (var i = 0; i < 10; i++) {
-          console.log(this.data.path)
-          this.data.path = this.test
-          this.player.play
-        }
+        this.player.loop = true
+        this.player.play()
       } else {
-        console.log('hihihi')
+        this.player.pause()
       }
-      console.log(this.data)
     },
     randomAudio() {
-      let newIndex
-      do {
-        newIndex = Math.floor(Math.random() * this.songs.length)
-      } while (newIndex === this.currentIndex)
-
-      this.currentIndex = newIndex
       this.isRandom = !this.isRandom
-      console.log('dssdsds')
     },
   },
 

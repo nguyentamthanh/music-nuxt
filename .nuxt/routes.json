@@ -7,6 +7,13 @@
     "_name": "_38d047b7"
   },
   {
+    "name": "test",
+    "path": "/test",
+    "component": "/home/thanh/nuxt-music/pages/test.vue",
+    "chunkName": "pages/test",
+    "_name": "_117085ea"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/thanh/nuxt-music/pages/index.vue",

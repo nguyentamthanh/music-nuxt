@@ -1,4 +1,4 @@
-export const Music = () => import('../../components/music.vue' /* webpackChunkName: "components/music" */).then(c => wrapFunctional(c.default || c))
+export { default as Music } from '../../components/music.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
