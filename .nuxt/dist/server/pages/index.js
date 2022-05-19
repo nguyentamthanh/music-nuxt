@@ -173,13 +173,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./pages/index.vue?vue&type=template&id=71bea94a&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./pages/index.vue?vue&type=template&id=c0fad71a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"w-full h-full bg-gray-200 flex justify-center shadow-md"},[_vm._ssrNode("<div class=\"flex justify-center flex-col fixed\">","</div>",[_vm._ssrNode("<div class=\"shadow-lg bg-white w-490px\">","</div>",[_vm._ssrNode("<header class=\"items-center\"><h1 class=\"text-red-500 text-stroke-1 text-xl flex justify-center\">\n          Now playing :\n        </h1> <h2 class=\"flex justify-center text-2xl mb-3\">"+_vm._ssrEscape("\n          "+_vm._s(_vm.data.name || 'Welcome to music')+"\n        ")+"</h2></header> <audio id=\"myAudio\""+(_vm._ssrAttr("src",_vm.data.path))+"></audio> <div id=\"cdThumb\" class=\"flex justify-center w-full\"><img id=\"cd-thumb-image\""+(_vm._ssrAttr("src",_vm.data.image ||
             'https://thumbs.dreamstime.com/z/error-page-not-found-vector-vinyl-music-broken-graphic-error-page-not-found-vector-vinyl-music-broken-graphic-background-156624909.jpg'))+" alt class=\"w-200px h-200px rounded-full bg-red-500 cursor-pointer animate-spin-slow\"></div> "),_vm._ssrNode("<div class=\"flex justify-center space-x-8 mt-6\">","</div>",[_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.isRepeat)?_c('Replay',{staticClass:"w-10 h-10 p-2 rounded-full"}):_c('Replay',{staticClass:"w-10 h-10 p-2 rounded-full text-red-500"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[_c('Back',{staticClass:"w-10 h-10 p-2 rounded-full"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.is_playing)?_c('Play',{staticClass:"w-15 h-15 border p-3 rounded-full bg-red-500 text-white"}):_c('Pause',{staticClass:"w-15 h-15 border p-3 rounded-full bg-red-500 text-white"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[_c('Next',{staticClass:"w-10 h-10 p-2 rounded-full"})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"cursor-pointer flex flex-col justify-center\">","</div>",[(!_vm.isRandom)?_c('Random',{staticClass:"w-10 h-10 p-2 rounded-full"}):_c('Random',{staticClass:"w-10 h-10 p-2 rounded-full text-red-500"})],1)],2),_vm._ssrNode(" <div class=\"px-5 my-2\"><input id=\"progress\" type=\"range\" value=\"0\" step=\"2\" min=\"0\" max=\"100\" class=\"slider\"></div>")],2)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"bg-gray-200 h-screen shadow-md mt-400px\">","</div>",_vm._l((_vm.songs),function(item){return _vm._ssrNode("<div>","</div>",[_c('Music',{attrs:{"data":item}})],1)}),0)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=71bea94a&
+// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=c0fad71a&
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./icons/back.vue?vue&type=template&id=2822e9aa&
 var backvue_type_template_id_2822e9aa_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"width":"1em","height":"1em","viewBox":"0 0 20 20"}},[_vm._ssrNode("<path fill=\"currentColor\" d=\"m4 10l9 9l1.4-1.5L7 10l7.4-7.5L13 1z\"></path>")])}
@@ -438,9 +438,6 @@ var external_os_ = __webpack_require__(65);
 // EXTERNAL MODULE: external "console"
 var external_console_ = __webpack_require__(66);
 
-// EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
-var free_solid_svg_icons_ = __webpack_require__(15);
-
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/windicss-webpack-plugin/dist/loaders/windicss-template.cjs!./pages/index.vue?vue&type=script&lang=js&
 //
 //
@@ -537,16 +534,6 @@ var free_solid_svg_icons_ = __webpack_require__(15);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 
@@ -575,7 +562,7 @@ var free_solid_svg_icons_ = __webpack_require__(15);
         id: 1,
         name: 'Có điều gì sao không nói cùng anh ',
         singer: 'Trung Quân Idol',
-        path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
+        path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
         image: 'https://giaithuongtinhnguyen.vn/tieu-su-trung-quan-idol/imager_1_5795_700.jpg'
       }, {
         id: 2,
@@ -648,7 +635,6 @@ var free_solid_svg_icons_ = __webpack_require__(15);
       setTimeout(function () {
         self.player.play();
       }, 150);
-      this.loadCurrentSong();
     },
 
     togglePlay() {
@@ -667,11 +653,15 @@ var free_solid_svg_icons_ = __webpack_require__(15);
       }
     },
 
-    loadCurrentSong() {
-      console.log(this.data);
-    },
+    nextAudio() {
+      this.currentIndex++;
 
-    nextAudio() {},
+      if (this.currentIndex >= this.songs.length) {
+        this.data.i;
+        this.player.src = this.songs[this.currentIndex].path;
+        this.player.play();
+      }
+    },
 
     backAudio() {},
 
@@ -688,6 +678,18 @@ var free_solid_svg_icons_ = __webpack_require__(15);
 
     randomAudio() {
       this.isRandom = !this.isRandom;
+      var y = '';
+
+      if (this.isRandom) {
+        this.songs.filter(item => {
+          y = item.path.split(' ');
+          console.log();
+        }); // audio_files[Math.floor(Math.random() * audio_files.length)]
+        // this.player.src = this.data.path
+        // this.player.play()
+      } else {
+        this.player.pause();
+      }
     }
 
   },

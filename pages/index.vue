@@ -79,15 +79,6 @@
             min="0"
             max="100"
           />
-          <!-- <input
-            @input="changeVol(event)"
-            class="slider"
-            type="range"
-            value="0"
-            step="2"
-            min="0"
-            max="100"
-          /> -->
         </div>
 
         <!-- music -->
@@ -112,7 +103,6 @@ import Random from '../icons/random.vue'
 import Music from '../components/music.vue'
 import { type } from 'os'
 import { log } from 'console'
-import { faBalanceScaleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   name: 'IndexPage',
@@ -133,7 +123,7 @@ export default {
           id: 1,
           name: 'Có điều gì sao không nói cùng anh ',
           singer: 'Trung Quân Idol',
-          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
+          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
           image:
             'https://giaithuongtinhnguyen.vn/tieu-su-trung-quan-idol/imager_1_5795_700.jpg',
         },
@@ -208,7 +198,6 @@ export default {
       setTimeout(function () {
         self.player.play()
       }, 150)
-      this.loadCurrentSong()
     },
     togglePlay() {
       if (this.player) {
@@ -225,11 +214,14 @@ export default {
       }
     },
 
-    loadCurrentSong() {
-      console.log(this.data)
+    nextAudio() {
+      this.currentIndex++
+      if (this.currentIndex >= this.songs.length) {
+        this.data.i
+        this.player.src = this.songs[this.currentIndex].path
+        this.player.play()
+      }
     },
-
-    nextAudio() {},
     backAudio() {},
     replayAudio() {
       this.isRepeat = !this.isRepeat
@@ -242,6 +234,20 @@ export default {
     },
     randomAudio() {
       this.isRandom = !this.isRandom
+      var y = ''
+
+      if (this.isRandom) {
+        this.songs.filter((item) => {
+          y = item.path.split(' ')
+          console.log()
+        })
+
+        // audio_files[Math.floor(Math.random() * audio_files.length)]
+        // this.player.src = this.data.path
+        // this.player.play()
+      } else {
+        this.player.pause()
+      }
     },
   },
 

@@ -596,31 +596,31 @@ module.exports.__inject__ = function (context) {
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("@fortawesome/free-solid-svg-icons");
+module.exports = require("node-fetch");
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = require("node-fetch");
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
 module.exports = require("vue-meta");
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"title\":\"nuxt-music\",\"meta\":[{\"hid\":\"charset\",\"charset\":\"utf-8\"},{\"hid\":\"viewport\",\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"},{\"hid\":\"mobile-web-app-capable\",\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"},{\"hid\":\"apple-mobile-web-app-title\",\"name\":\"apple-mobile-web-app-title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:type\",\"name\":\"og:type\",\"property\":\"og:type\",\"content\":\"website\"},{\"hid\":\"og:title\",\"name\":\"og:title\",\"property\":\"og:title\",\"content\":\"nuxt-music\"},{\"hid\":\"og:site_name\",\"name\":\"og:site_name\",\"property\":\"og:site_name\",\"content\":\"nuxt-music\"}],\"link\":[{\"hid\":\"shortcut-icon\",\"rel\":\"shortcut icon\",\"href\":\"/music-nuxt/_nuxt/icons/icon_64x64.e3e9fb.png\"},{\"hid\":\"apple-touch-icon\",\"rel\":\"apple-touch-icon\",\"href\":\"/music-nuxt/_nuxt/icons/icon_512x512.e3e9fb.png\",\"sizes\":\"512x512\"},{\"rel\":\"manifest\",\"href\":\"/music-nuxt/_nuxt/manifest.d810aee3.json\",\"hid\":\"manifest\"}],\"htmlAttrs\":{\"lang\":\"en\"}}");
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("@vueuse/sound");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/free-solid-svg-icons");
 
 /***/ }),
 /* 20 */
@@ -999,7 +999,7 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_ufo_ = __webpack_require__(2);
 
 // EXTERNAL MODULE: external "node-fetch"
-var external_node_fetch_ = __webpack_require__(16);
+var external_node_fetch_ = __webpack_require__(15);
 var external_node_fetch_default = /*#__PURE__*/__webpack_require__.n(external_node_fetch_);
 
 // CONCATENATED MODULE: ./.nuxt/middleware.js
@@ -1686,7 +1686,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vue-meta"
-var external_vue_meta_ = __webpack_require__(17);
+var external_vue_meta_ = __webpack_require__(16);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
@@ -2598,7 +2598,7 @@ function hasMeta(arr, key, val) {
   return arr.find(obj => val ? obj[key] === val : obj[key]);
 }
 // EXTERNAL MODULE: ./.nuxt/pwa/meta.json
-var meta = __webpack_require__(18);
+var meta = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./.nuxt/pwa/meta.plugin.js
 
@@ -3607,7 +3607,7 @@ if (false) {}
 
 /* harmony default export */ var composition_api_plugin = (globalPlugin);
 // EXTERNAL MODULE: external "@vueuse/sound"
-var sound_ = __webpack_require__(19);
+var sound_ = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./.nuxt/sound.config.js
 /* harmony default export */ var sound_config = ({});
@@ -3640,7 +3640,7 @@ var fontawesome_svg_core_ = __webpack_require__(12);
 var vue_fontawesome_ = __webpack_require__(9);
 
 // EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
-var free_solid_svg_icons_ = __webpack_require__(15);
+var free_solid_svg_icons_ = __webpack_require__(19);
 
 // EXTERNAL MODULE: external "@fortawesome/free-brands-svg-icons"
 var free_brands_svg_icons_ = __webpack_require__(20);

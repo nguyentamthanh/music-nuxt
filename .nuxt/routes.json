@@ -3,7 +3,6 @@
     "name": "index",
     "path": "/",
     "component": "/home/thanh/nuxt-music/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3575f2aa"
+    "chunkName": "pages/index"
   }
 ]
