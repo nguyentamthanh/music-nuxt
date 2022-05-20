@@ -264,12 +264,9 @@ export default {
       if (this.is_playing) {
         this.player.pause()
       }
-      var x = this.data.path
       this.cd = item.image
       this.cdname = item.name
-      this.link =
-        'https://nguyentamthanh.github.io/music-nuxt/' + this.data.path
-      console.log(x)
+      this.link = 'https://nguyentamthanh.github.io/music-nuxt/' + item.path
       this.data = item
       let self = this
       setTimeout(function () {
