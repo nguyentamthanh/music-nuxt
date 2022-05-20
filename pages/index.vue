@@ -4,7 +4,7 @@
   >
     <!-- dashbroad -->
     <div
-      class="flex justify-center flex-col fixed backdrop-filter backdrop-blur-md bg-white/20"
+      class="flex justify-center flex-col fixed backdrop-filter backdrop-blur-md bg-white/10"
     >
       <div class="shadow-lg w-480px pb-2">
         <header class="items-center">
