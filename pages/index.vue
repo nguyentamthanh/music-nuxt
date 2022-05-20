@@ -4,7 +4,7 @@
   >
     <!-- dashbroad -->
     <div
-      class="flex justify-center flex-col fixed backdrop-filter backdrop-blur-md"
+      class="flex justify-center flex-col fixed backdrop-filter backdrop-blur-md bg-white/20"
     >
       <div class="shadow-lg w-480px pb-2">
         <header class="items-center">
@@ -44,7 +44,7 @@
             />
             <Mute class="text-white p-2 rounded-full w-10 h-10" v-else />
             <div
-              class="dropdown-menu absolute hidden transform -translate-x-1/3 -translate-y-20 transition-all duration-2000 p-2"
+              class="dropdown-menu absolute hidden transform transition-transform eaease-out duration-300 -translate-x-1/3 -translate-y-20 p-2"
             >
               <input
                 id="slide"
@@ -54,7 +54,7 @@
                 min="0"
                 max="100"
                 @input="changeVol($event)"
-                class="transform -rotate-90"
+                class="transform -rotate-90 transition-transform eaease-out duration-300"
               />
             </div>
           </div>
@@ -85,7 +85,7 @@
 
             <Pause
               v-else
-              class="w-15 h-15 p-3 rounded-full bg-red-500 text-white"
+              class="w-15 h-15 p-3 rounded-full bg-red-500 text-white animate-bounce"
             />
           </div>
           <div
@@ -242,6 +242,22 @@ export default {
     this.player.onpause = function () {
       self.is_playing = false
     }
+    this.player.onended = function () {
+      // self.currentIndex = self.link.id
+      // self.player.src = self.songs[self.currentIndex].path
+      // self.cd = self.songs[self.currentIndex].image
+      // self.cdname = self.songs[self.currentIndex].name
+      // self.player.play()
+      if (self.isActive) {
+        var random
+        random = self.songs[[Math.floor(Math.random() * self.songs.length)]]
+        self.player.src = self.link
+        self.link = 'https://nguyentamthanh.github.io/music-nuxt/' + random
+        self.player.play()
+      } else {
+        self.nextAudio()
+      }
+    }
     this.player.ontimeupdate = function () {
       if (self.player.duration) {
         const progressPercent = Math.floor(
@@ -310,10 +326,6 @@ export default {
         this.cdname = this.songs[this.currentIndex].name
         this.player.play()
       }
-      if (this.isActive) {
-        this.randomAudio()
-        this.player.play()
-      }
     },
     replayAudio() {
       this.isRepeat = !this.isRepeat
@@ -328,10 +340,12 @@ export default {
       this.isRandom = !this.isRandom
       if (this.isRandom) {
         this.isActive = true
-        let random
-        random = this.songs[[Math.floor(Math.random() * this.songs.length)]]
-        this.player.src = random
+      } else {
+        this.isActive = false
       }
+
+      // return (this.link =
+      //   'https://nguyentamthanh.github.io/music-nuxt/' + random)
     },
   },
 
