@@ -28,7 +28,36 @@
         </div>
 
         <!-- control -->
-        <div class="flex justify-center space-x-8 mt-6">
+        <div class="flex justify-center space-x-5 mt-6">
+          <div class="flex flex-col justify-center dropdownn">
+            <Fullvol
+              class="p-2 rounded-full text-white w-10 h-10"
+              v-if="vol > 0.66"
+            />
+            <Medvol
+              class="text-white p-2 w-10 h-10 rounded-full"
+              v-else-if="0.66 >= vol && vol > 0.33"
+            />
+            <Smallvol
+              class="text-white p-2 rounded-full w-10 h-10"
+              v-else-if="0.33 >= vol && vol > 0"
+            />
+            <Mute class="text-white p-2 rounded-full w-10 h-10" v-else />
+            <div
+              class="dropdown-menu absolute hidden transform -translate-x-1/3 -translate-y-20 transition-all duration-2000 p-2"
+            >
+              <input
+                id="slide"
+                type="range"
+                value="100"
+                step="1"
+                min="0"
+                max="100"
+                @input="changeVol($event)"
+                class="transform -rotate-90"
+              />
+            </div>
+          </div>
           <div
             class="cursor-pointer flex flex-col justify-center"
             @click="replayAudio()"
@@ -51,12 +80,12 @@
           >
             <Play
               v-if="!is_playing"
-              class="w-15 h-15 border p-3 rounded-full bg-red-500 text-white"
+              class="w-15 h-15 p-3 rounded-full bg-red-500 text-white"
             />
 
             <Pause
               v-else
-              class="w-15 h-15 border p-3 rounded-full bg-red-500 text-white"
+              class="w-15 h-15 p-3 rounded-full bg-red-500 text-white"
             />
           </div>
           <div
@@ -74,6 +103,9 @@
               class="w-10 h-10 p-2 rounded-full text-white"
             />
             <Random v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
+          </div>
+          <div class="cursor-pointer flex flex-col justify-center">
+            <Dowload class="w-10 h-10 p-2 rounded-full text-white" />
           </div>
         </div>
         <div class="px-5 my-2">
@@ -114,6 +146,11 @@ import Random from '../icons/random.vue'
 import Music from '../components/music.vue'
 import { type } from 'os'
 import { log } from 'console'
+import Fullvol from '../icons/Fullvol.vue'
+import Medvol from '../icons/Medvol.vue'
+import Mute from '../icons/Mute.vue'
+import Smallvol from '../icons/smallvol.vue'
+import Dowload from '../icons/dowload.vue'
 
 export default {
   name: 'IndexPage',
@@ -131,6 +168,7 @@ export default {
       isRepeat: false,
       isTimeUpdate: false,
       is_playing: false,
+      vol: 1,
       songs: [
         {
           id: 1,
@@ -163,6 +201,15 @@ export default {
           path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
           image:
             'https://livestream.vn/wp-content/uploads/2019/02/1532919878451_600.jpg',
+        },
+
+        {
+          id: 5,
+          name: 'Chạnh lòng thương cô 2 ',
+          singer: 'Huy Vạc',
+          path: 'assets/music/Chanh-Long-Thuong-Co-2-Huy-Vac.mp3',
+          image:
+            'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/0/d/0/f0d00339fe1372b9fb25e2b6131d45a7.jpg',
         },
       ],
     }
@@ -202,6 +249,10 @@ export default {
     }
   },
   methods: {
+    changeVol(event) {
+      this.player.volume = event.target.value / 100
+      this.vol = this.player.volume
+    },
     selectMusic(item) {
       if (this.is_playing) {
         this.player.pause()
@@ -245,11 +296,15 @@ export default {
     backAudio() {
       this.currentIndex--
       if (this.currentIndex < 0) {
-        this.currentIndex = 4
+        this.currentIndex = 5
       } else {
         this.player.src = this.songs[this.currentIndex].path
         this.cd = this.songs[this.currentIndex].image
         this.cdname = this.songs[this.currentIndex].name
+        this.player.play()
+      }
+      if (this.isActive) {
+        this.randomAudio()
         this.player.play()
       }
     },
@@ -265,33 +320,28 @@ export default {
     randomAudio() {
       this.isRandom = !this.isRandom
       if (this.isRandom) {
+        this.isActive = true
         let random
-        this.player.play()
-        this.player.src = random
         random = this.songs[[Math.floor(Math.random() * this.songs.length)]]
-        console.log(random.path)
-        this.nextAudio()
-        this.replayAudio()
-      } else {
-        this.player.pause()
+        this.player.src = random
       }
-
-      // var audio = new Audio(random_file())
-
-      // this.player.play()
-
-      // this.player.addEventListener(
-      //   'ended',
-      //   function () {
-      //     audio.play(random_file())
-      // }
-      // audio_files[Math.floor(Math.random() * audio_files.length)]
-      // this.player.src = this.data.path
-      // this.player.play()
     },
   },
 
-  components: { Back, Replay, Play, Pause, Next, Random, Music },
+  components: {
+    Back,
+    Replay,
+    Play,
+    Pause,
+    Next,
+    Random,
+    Music,
+    Fullvol,
+    Medvol,
+    Mute,
+    Smallvol,
+    Dowload,
+  },
 }
 </script>
 <style>
@@ -325,5 +375,8 @@ export default {
   height: 7px;
   background: red;
   cursor: pointer;
+}
+.dropdownn:hover .dropdown-menu {
+  display: block;
 }
 </style>
