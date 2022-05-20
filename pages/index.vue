@@ -16,7 +16,7 @@
           </h2>
         </header>
         <!-- cd -->
-        <audio id="myAudio" :src="data.path"></audio>
+        <audio id="myAudio" :src="link"></audio>
         <div class="flex justify-center w-full" id="cdThumb">
           <!-- animate-spin-slow -->
           <img
@@ -105,7 +105,14 @@
             <Random v-else class="w-10 h-10 p-2 rounded-full text-red-500" />
           </div>
           <div class="cursor-pointer flex flex-col justify-center">
-            <Dowload class="w-10 h-10 p-2 rounded-full text-white" />
+            <a
+              :href="data.path"
+              download
+              target="_blank"
+              tabindex="0"
+              role="link"
+              ><Dowload class="w-10 h-10 p-2 rounded-full text-white"
+            /></a>
           </div>
         </div>
         <div class="px-5 my-2">
@@ -160,6 +167,7 @@ export default {
       cdname: 'Welcome to music',
       data: '',
       player: '',
+      link: '',
       is_playing: false,
       isActive: false,
       currentIndex: 0,
@@ -174,7 +182,7 @@ export default {
           id: 1,
           name: 'Có điều gì sao không nói cùng anh ',
           singer: 'Trung Quân Idol',
-          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
+          path: 'assets/music/Co-Dieu-Gi-Sao-Khong-Noi-Cung-Anh-Trung-Quan-Idol.mp3',
           image:
             'https://giaithuongtinhnguyen.vn/tieu-su-trung-quan-idol/imager_1_5795_700.jpg',
         },
@@ -182,14 +190,14 @@ export default {
           id: 2,
           name: 'Phía sau một cô gái ',
           singer: 'Soobin Hoàng Sơn',
-          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Phia-Sau-Mot-Co-Gai-SOOBIN.mp3',
+          path: 'assets/music/Phia-Sau-Mot-Co-Gai-SOOBIN.mp3',
           image: 'https://vnn-imgs-f.vgcloud.vn/2019/02/22/09/img-3722.jpg',
         },
         {
           id: 3,
           name: 'Trót yêu',
           singer: 'Trung Quân Idol',
-          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
+          path: 'assets/music/Trot-Yeu-Trung-Quan-Idol.mp3',
           image:
             'https://image.thanhnien.vn/w2048/Uploaded/2022/jhvabun/2021_08_20/mmg0914_2_eykf.png',
         },
@@ -198,11 +206,10 @@ export default {
           id: 4,
           name: 'Xin đừng lặng im ',
           singer: 'Soobin Hoàng Sơn',
-          path: 'https://nguyentamthanh.github.io/music-nuxt/assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
+          path: 'assets/music/Xin-Dung-Lang-Im-SOOBIN.mp3',
           image:
             'https://livestream.vn/wp-content/uploads/2019/02/1532919878451_600.jpg',
         },
-
         {
           id: 5,
           name: 'Chạnh lòng thương cô 2 ',
@@ -257,9 +264,12 @@ export default {
       if (this.is_playing) {
         this.player.pause()
       }
+      var x = this.data.path
       this.cd = item.image
       this.cdname = item.name
-
+      this.link =
+        'https://nguyentamthanh.github.io/music-nuxt/' + this.data.path
+      console.log(x)
       this.data = item
       let self = this
       setTimeout(function () {
