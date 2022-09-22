@@ -57,7 +57,10 @@ export default {
   build: {},
   ssr: false,
   router: {
-    base: '/music-nuxt/',
+    base: {
+      host: '0.0.0.0',
+      port: 3333,
+    },
   },
   // other config goes here
 }

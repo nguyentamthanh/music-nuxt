@@ -2,15 +2,13 @@
   {
     "name": "draw",
     "path": "/draw",
-    "component": "/home/thanh/nuxt-music/pages/draw.vue",
-    "chunkName": "pages/draw",
-    "_name": "_2481c59c"
+    "component": "/home/thanh/music-nuxt/pages/draw.vue",
+    "chunkName": "pages/draw"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/thanh/nuxt-music/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3575f2aa"
+    "component": "/home/thanh/music-nuxt/pages/index.vue",
+    "chunkName": "pages/index"
   }
 ]
