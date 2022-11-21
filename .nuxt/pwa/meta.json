@@ -21,6 +21,11 @@
       "content": "nuxt-music"
     },
     {
+      "hid": "description",
+      "name": "description",
+      "content": "## Build Setup"
+    },
+    {
       "hid": "og:type",
       "name": "og:type",
       "property": "og:type",
@@ -37,6 +42,12 @@
       "name": "og:site_name",
       "property": "og:site_name",
       "content": "nuxt-music"
+    },
+    {
+      "hid": "og:description",
+      "name": "og:description",
+      "property": "og:description",
+      "content": "## Build Setup"
     }
   ],
   "link": [
@@ -53,7 +64,7 @@
     },
     {
       "rel": "manifest",
-      "href": "/music-nuxt/_nuxt/manifest.d810aee3.json",
+      "href": "/music-nuxt/_nuxt/manifest.85c4b61d.json",
       "hid": "manifest"
     }
   ],

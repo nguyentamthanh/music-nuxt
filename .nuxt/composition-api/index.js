@@ -481,7 +481,7 @@ const globalPlugin = (context) => {
   };
 };
 
-const staticPath = "/home/tamthanh/music-nuxt/.nuxt/static-json";
+const staticPath = "/home/thanh/music-nuxt/.nuxt/static-json";
 const staticCache = {};
 function writeFile(key, value) {
   if (process.client || !process.static)
